@@ -1,6 +1,6 @@
 # BIOL3411
-Genome Analysis course (BIOL 3411 04) at Northeastern University, Spring 2024.
-Ambystoma mexicanum Group 1
+### Genome Analysis course (BIOL 3411 04) at Northeastern University, Spring 2024.
+## Ambystoma mexicanum Group 1
 Genome size: ~32 Gb
 Structure: 14 chromosome pairs 
 Genes: ~ 23,250
