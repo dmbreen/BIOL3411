@@ -20,7 +20,9 @@ wget https://www.axolotl-omics.org/dl/AmexG_v6.0-DD.fa.gz
 Create a new file containing only your desired sequence using the following commands: <br> <br>
 echo 'chr14p' > seqname.txt <br>
 seqtk subseq AmexG_v6.0-DD.fa seqname.txt > chromosome14.txt <br> <br>
-The file chromosome14.txt now contains the sequence for only chromosome 14.
+The file chromosome14.txt now contains the sequence for only chromosome 14. <br> <br>
+>chr14p
+GGTTTTCTCTGTTTGCTTTTCCCTTCTCCTTGGGATAAGTTCTTTCTACTTACCTGACGGCCGTTTCAGTTTCTGCGGTGGCCTTCTTGTCT
 
 ## Generating the reverse complement of a sequence.
 1. Once you have isolated the .fa or .fasta file for your sequence, load the relevant modules (emboss and seqtk) into your working directory. <br> <br>
@@ -28,7 +30,10 @@ module load emboss/6.6.0 <br>
 module load seqtk
 
 2. Generate the reverse compliment of a sequence into a new file reversecompliment.txt <br> <br>
-revseq chromosome14.txt  reversecompliment.txt
+revseq chromosome14.txt  reversecompliment.txt <br> <br>
+>chr14p Reversed:
+nnnnnnnnnnnnnnnnnnnnAATCCCACACAACCAGCTACACCACCTGAGAACTCCATGG
+
 
 ## Predicting the amino acid sequence of a sequence.
 1. Once again, determine the name of the file you wish to translate and load the relevant modules (emboss and seqtk) <br> <br>
@@ -48,6 +53,11 @@ module load emboss/6.6.0 <br>
 module load seqtk
 
 2. Using the command infoseq displays basic information about sequences, inlcuding GC content. <br> <br>
-infoseq chromosome14.txt  <br>
+infoseq chromosome14.txt  <br> <br>
+Display basic information about sequences
+USA                      Database  Name           Accession      Type Length %GC    Organism            Description
+fasta::chromosome14.txt:chr14p -              chr14p         -              N    184706515 46.67
+<br>
+
 ## how to analyze sequence as a job on discovery cluster (ambystoma genome is too large)
 1. Create a new file ending in .bash, this is a script which contains the commands you desire the discovery cluster to run.
