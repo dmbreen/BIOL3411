@@ -16,7 +16,7 @@ wget https://www.axolotl-omics.org/dl/AmexG_v6.0-DD.fa.gz
 ## How to isolate one chromosome from a sequence. 
 Because of the size of the Ambystoma genome, the commands we used to analyze sequences could not be used on the entire genome by our computers. Instead, we ran a job on the discovery cluster to determine what individual sequences comprised our whole genome file. Alternatively, one could run a job on the discovery cluster which uses these same commands on the entire genome, however we still encountered memory allocation issues when attempting this. <br> <br>
 
-1. You will first need to create a bash script which reads your whole genome and searches for all instances of '>' or the new sequence in a fasta file. <br> <br>
+1. You will first need to create a bash script which reads your whole genome and searches for all instances of '>' or the new sequence in a fasta file. This must be saved in a file with the extension .bash. <br> <br>
 #!/bin/bash <br>
 #SBATCH --partition=short <br>
 #SBATCH --job-name=ambystomainfo <br>
@@ -75,6 +75,3 @@ Display basic information about sequences
 USA                      Database  Name           Accession      Type Length %GC    Organism            Description
 fasta::chromosome14.txt:chr14p -              chr14p         -              N    184706515 46.67
 <br>
-
-## how to analyze sequence as a job on discovery cluster (ambystoma genome is too large)
-1. Create a new file ending in .bash, this is a script which contains the commands you desire the discovery cluster to run.
