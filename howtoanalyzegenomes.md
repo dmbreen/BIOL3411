@@ -36,7 +36,11 @@ module load emboss/6.6.0 <br>
 module load seqtk
 
 2. Generate the predicted amino acid translation of a sequence into a new file AAsequence.txt <br> <br>
-transeq chromosome14.txt  AAsequence.txt
+transeq chromosome14.txt  AAsequence.txt <br> <br>
+>chr14p_1 <br>
+GFLCLLFPSPWDKFFLLT*RPFQFLRWPSCLQPLPCRSLGTTSLFPL*SRRFGGRHVFSL <br>
+LFAALFSRGSPVFPCFLCPLFPLP*FSLSYRAW*VLGPEVSSAPFTSHWCRFGLLSCVLP <br>
+
 
 ## Determining the GC content of a sequence.
 1. Determine the name of the file you wish to determine the GC content of and load emboss and seqtk. <br> <br>
