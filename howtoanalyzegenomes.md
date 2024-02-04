@@ -29,7 +29,7 @@ cd /scratch/breen.d/ <br>
 grep '>' AmexG_v6.0-DD.fa <br>
 <br>
 2. You must then run this bash script on the discovery cluster with the following command. Once the job has been completed, you can view your results under the file name <JOBID>.output <br> <br>
-sbatch '<script name>'.bash <br>
+sbatch '<script name>'.bash <br> <br>
 
 3. Once you have a list of sequences from your entire genome file, pick which one you would like to analyze. I chose the p arm of chromosome 14 of the ambystoma genome with the sequence identifier >chr14p. <br>
 Create a new file containing only your desired sequence using the following commands: <br> <br>
