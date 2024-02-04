@@ -17,9 +17,9 @@ wget https://www.axolotl-omics.org/dl/AmexG_v6.0-DD.fa.gz
 1. You will first need to create a bash script which reads your whole genome and searches for all instances of '>' or the new sequence in a fasta file.
 
 2. Once you have a list of sequences from your entire genome file, pick which one you would like to analyze. I chose the p arm of chromosome 14 of the ambystoma genome with the sequence identifier >chr14p. <br>
-Create a new file containing only your desired sequence using the following commands: <br>
+Create a new file containing only your desired sequence using the following commands: <br> <br>
 echo 'chr14p' > seqname.txt <br>
-seqtk subseq AmexG_v6.0-DD.fa seqname.txt > chromosome14.txt <br>
+seqtk subseq AmexG_v6.0-DD.fa seqname.txt > chromosome14.txt <br> <br>
 The file chromosome14.txt now contains the sequence for only chromosome 14.
 
 ## Generating the reverse complement of a sequence.
