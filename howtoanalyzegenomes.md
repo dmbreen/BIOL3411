@@ -13,13 +13,22 @@ chmod +x datasets dataformat
 ### From Axolotl-omics.org:
 wget https://www.axolotl-omics.org/dl/AmexG_v6.0-DD.fa.gz
 
+## How to isolate one chromosome from a sequence.
+1. You will first need to create a bash script which reads your whole genome and searches for all instances of '>' or the new sequence in a fasta file.
+
+2. Once you have a list of sequences from your entire genome file, pick which one you would like to analyze. I chose the p arm of chromosome 14 of the ambystoma genome with the sequence identifier >chr14p. <br>
+Create a new file containing only your desired sequence using the following commands: <br>
+echo 'chr14p' > seqname.txt <br>
+seqtk subseq AmexG_v6.0-DD.fa seqname.txt > chromosome14.txt <br>
+The file chromosome14.txt now contains the sequence for only chromosome 14.
+
 ## Generating the reverse complement of a sequence.
 1. Once you have isolated the .fa or .fasta file for your sequence, load the relevant modules (emboss and seqtk) into your working directory. <br> <br>
 module load emboss/6.6.0 <br>
 module load seqtk
 
 2. Generate the reverse compliment of a sequence into a new file reversecompliment.txt <br> <br>
-revseq AmexG_v6.0-DD.fa reversecompliment.txt
+revseq chromosome14.txt  reversecompliment.txt
 
 ## Predicting the amino acid sequence of a sequence.
 1. Once again, determine the name of the file you wish to translate and load the relevant modules (emboss and seqtk) <br> <br>
@@ -27,7 +36,7 @@ module load emboss/6.6.0 <br>
 module load seqtk
 
 2. Generate the predicted amino acid translation of a sequence into a new file AAsequence.txt <br> <br>
-transeq AmexG_v6.0-DD.fa AAsequence.txt
+transeq chromosome14.txt  AAsequence.txt
 
 ## Determining the GC content of a sequence.
 1. Determine the name of the file you wish to determine the GC content of and load emboss and seqtk. <br> <br>
@@ -35,6 +44,6 @@ module load emboss/6.6.0 <br>
 module load seqtk
 
 2. Using the command infoseq displays basic information about sequences, inlcuding GC content. <br> <br>
-infoseq AmexG_v6.0-DD.fa <br>
+infoseq chromosome14.txt  <br>
 ## how to analyze sequence as a job on discovery cluster (ambystoma genome is too large)
-1. Create
+1. Create a new file ending in .bash, this is a script which contains the commands you desire the discovery cluster to run.
