@@ -14,9 +14,24 @@ chmod +x datasets dataformat
 wget https://www.axolotl-omics.org/dl/AmexG_v6.0-DD.fa.gz
 
 ## How to isolate one chromosome from a sequence.
-1. You will first need to create a bash script which reads your whole genome and searches for all instances of '>' or the new sequence in a fasta file.
+1. You will first need to create a bash script which reads your whole genome and searches for all instances of '>' or the new sequence in a fasta file. <br> <br>
+#!/bin/bash <br>
+#SBATCH --partition=short <br>
+#SBATCH --job-name=ambystomainfo <br>
+#SBATCH --time=6:00:00 <br>
+#SBATCH --nodes=1 <br>
+#SBATCH --cpus-per-task=2 <br>
+#SBATCH --mem=264G <br>
+#SBATCH --output=%j.output <br>
+#SBATCH --error=%j.error <br>
+<br>
+cd /scratch/breen.d/ <br>
+grep '>' AmexG_v6.0-DD.fa <br>
+<br>
+2. You must then run this bash script on the discovery cluster with the following command. Once the job has been completed, you can view your results under the file name <JOBID>.output <br> <br>
+sbatch '<script name>'.bash <br>
 
-2. Once you have a list of sequences from your entire genome file, pick which one you would like to analyze. I chose the p arm of chromosome 14 of the ambystoma genome with the sequence identifier >chr14p. <br>
+3. Once you have a list of sequences from your entire genome file, pick which one you would like to analyze. I chose the p arm of chromosome 14 of the ambystoma genome with the sequence identifier >chr14p. <br>
 Create a new file containing only your desired sequence using the following commands: <br> <br>
 echo 'chr14p' > seqname.txt <br>
 seqtk subseq AmexG_v6.0-DD.fa seqname.txt > chromosome14.txt <br> <br>
