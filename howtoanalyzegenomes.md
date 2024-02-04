@@ -35,4 +35,6 @@ module load emboss/6.6.0 <br>
 module load seqtk
 
 2. Using the command infoseq displays basic information about sequences, inlcuding GC content. <br> <br>
-infoseq AmexG_v6.0-DD.fa
+infoseq AmexG_v6.0-DD.fa <br>
+## how to analyze sequence as a job on discovery cluster (ambystoma genome is too large)
+1. Create
