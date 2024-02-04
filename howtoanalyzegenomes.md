@@ -25,8 +25,7 @@ Because of the size of the Ambystoma genome, the commands we used to analyze seq
 #SBATCH --cpus-per-task=2 <br>
 #SBATCH --mem=264G <br>
 #SBATCH --output=%j.output <br>
-#SBATCH --error=%j.error <br>
-<br>
+#SBATCH --error=%j.error <br> <br>
 cd /scratch/breen.d/ <br>
 grep '>' AmexG_v6.0-DD.fa <br>
 <br>
